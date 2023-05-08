@@ -10,7 +10,6 @@ public class AccountTest {
 		list.themTk(acc2);
 		list.themTk(acc3);
 	        Scanner scanner = new Scanner(System.in);
-
 	        while (true) {
 	            System.out.println("----- MENU -----");
 	            System.out.println("1. Thêm tài khoản");
@@ -20,17 +19,14 @@ public class AccountTest {
 	            System.out.println("5. Rút tiền khỏi tài khoản");
 	            System.out.println("6. Chuyển tiền từ tài khoản này sang tài khoản khác");
 	            System.out.println("7. Kết thúc");
-
 	            int choice = scanner.nextInt();
-
 	            switch (choice) {
 	            case 1:
 	                System.out.println("Nhập tên tài khoản: ");
 	                String tenTk = scanner.nextLine();
 	                scanner.nextLine(); 
 	                System.out.println("Nhập số tài khoản: ");
-	                int soTk = scanner.nextInt();
-	                
+	                int soTk = scanner.nextInt();              
 	                System.out.println("Nhập số tiền: ");
 	                double soTien = scanner.nextDouble();
 	                scanner.nextLine();
@@ -43,30 +39,23 @@ public class AccountTest {
 	                    System.out.println("Không thể thêm tài khoản");
 	                }
 	                break;
-
-
-
 	                case 2:
 	                    System.out.println("Tổng số tài khoản hiện có là: " + list.demSoTk());
 	                    break;
-
 	                case 3:
-	                    list.inDanhSachTk();
-	                   
+	                    list.inDanhSachTk();                  
 	                    break;
-
 	                case 4:
 	                    System.out.println("Nhập số tài khoản cần nạp tiền: ");
 	                    int stk1 = scanner.nextInt();
 	                    System.out.println("Nhập số tiền cần nạp: ");
 	                    double soTien1 = scanner.nextDouble();
 	                    if (list.napTien(stk1, soTien1)) {
-	                        System.out.println("Nạp tiền thành công");
+	                        System.out.println("Cảm ơn bạn đã sử dụng dịch vụ");
 	                    } else {
 	                        System.out.println("Không thể nạp tiền");
 	                    }
 	                    break;
-
 	                case 5:
 	                    System.out.println("Nhập số tài khoản cần rút tiền: ");
 	                    int stk2 = scanner.nextInt();
@@ -80,17 +69,27 @@ public class AccountTest {
 	                    }
 	                    break;
 	                case 6:
-	                    
+	                    System.out.println("Nhập số tài khoản nguồn: ");
+	                    int stkNguon = scanner.nextInt();
+	                    scanner.nextLine();
+	                    System.out.println("Nhập số tài khoản đích: ");
+	                    int stkDich = scanner.nextInt();
+	                    scanner.nextLine();
+	                    System.out.println("Nhập số tiền cần chuyển: ");
+	                    double soTienChuyen = scanner.nextDouble();
+	                    scanner.nextLine();
+	                    if (list.chuyenTien(stkNguon, stkDich, soTienChuyen)) {
+	                        System.out.println("Chuyển tiền thành công");
+	                    } else {
+	                        System.out.println("Không thể chuyển tiền");
+	                    }
 	                    break;
-
 	                case 7:
 	                	System.out.println("Cảm ơn bạn đã sử dụng dịch vụ!!");
 	                	break;
 	                default:
 	                    System.out.println("Lựa chọn không hợp lệ");
-	                    break;
-
-	                   
+	                    break;               
 	}
 }
   }
