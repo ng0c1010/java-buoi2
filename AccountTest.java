@@ -6,9 +6,11 @@ public class AccountTest {
 		Account acc1 = new Account ("Ted Murphy", 72354, 100000, "Mở");
 		Account acc2 = new Account ("Jane Smith", 69731, 40000, "Mở");
 		Account acc3 = new Account ("Edward Demsey", 93753, 700000, "Mở");
+		Account acc4 = new Account ("Ngoc gpt", 101003, 900000, "Mở");
 		list.themTk(acc1);
 		list.themTk(acc2);
 		list.themTk(acc3);
+		list.themTk(acc4);
 	        Scanner scanner = new Scanner(System.in);
 
 	        while (true) {
