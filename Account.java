@@ -26,7 +26,6 @@ public class Account {
 	            this.soTk = 999999;
 	            this.trangThai = "Số tài khoản không hợp lệ";
 	        }
-
 	        if (tenTk != null && !tenTk.isEmpty()) {
 	            this.tenTk = tenTk;
 	        } else {
@@ -72,17 +71,17 @@ public class Account {
 	 public String getSotienFormatted() {
 	        NumberFormat formatter = NumberFormat.getCurrencyInstance();
 	        return formatter.format(soTien);
-	    } 
+	    }
 	 @Override
 	    public String toString() {
 	        return "Tài khoản " + soTk + ": " + tenTk + " - Số dư: " + String.format("%,.2f", soTien) + " đồng";
 	    }
-	 public boolean napTien(double soTienNap, int i) {
+	 public boolean napTien(double soTienNap, int stkNhan) {
 		    if (soTienNap <= 0) {
 		        System.out.println("So tien nap phai lon hon 0");
 		    } else {
 		        soTien += soTienNap;
-		        System.out.println("Nap tien thanh cong");
+		        System.out.println("Nạp tiền thành công");
 		        return true;
 		    }
 		    return false;
@@ -94,7 +93,7 @@ public class Account {
 		        System.out.println("So du khong du de rut tien");
 		    } else {
 		        soTien -= soTienRut;
-		        System.out.println("Rut tien thanh cong");
+		        System.out.println("Rút tiền thành công");
 		        return true; // 
 		    }
 		    return false;
@@ -113,4 +112,7 @@ public class Account {
 	    this.soTien += tienLai;
 	    this.trangThai = "Đáo hạn thành công, lãi suất là " + String.format("%.2f", tienLai);
 	}
+	public double tinhLai() {
+        return this.soTien * 0.035;
+    }
 }
