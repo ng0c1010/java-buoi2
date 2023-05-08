@@ -7,14 +7,12 @@ public class Account {
 	private String tenTk;
 	private String trangThai;
     private static final double laiSuat = 0.035;
-
 	public Account() {
         this.soTk = 999999;
         this.tenTk = "Chưa xác định";
         this.soTien = 50.0;
         this.trangThai = "Mở";
     }
-	
 	public Account(String tenTk, int soTk,double soTien,  String trangThai) {
 		 if (soTien >= 50.0) {
 	            this.soTien = soTien;
@@ -35,16 +33,11 @@ public class Account {
 	            this.tenTk = "Chưa xác định";
 	            this.trangThai = "Tên tài khoản không hợp lệ";
 	        }
-
-	       
-
 	        this.trangThai = "Mở";
 	}
-
 	public double getSoTien() {
 		return soTien;
 	}
-
 	public void setSoTien(double soTien) {
 		if (soTien >= 50) {
 			this.soTien = soTien;
@@ -53,11 +46,9 @@ public class Account {
 			this.trangThai = "Số tiền không hợp lệ";
 		}
 	}
-
 	public int getSoTk() {
 		return soTk;
 	}
-
 	public void setSoTk(int soTk) {
 		if (soTk > 0 && soTk != 999999 ) {
 			this.soTk = soTk;
@@ -66,34 +57,26 @@ public class Account {
             this.trangThai = "Số tài khoản không hợp lệ";
 		}
 	}
-
 	public String getTenTk() {
 		return tenTk;
 	}
-
 	public void setTenTk(String tenTk) {
 		this.tenTk = tenTk;
 	}
-
 	public String getTrangThai() {
 		return trangThai;
 	}
-
 	public void setTrangThai(String trangThai) {
 		this.trangThai = trangThai;
 	}
-
 	 public String getSotienFormatted() {
 	        NumberFormat formatter = NumberFormat.getCurrencyInstance();
 	        return formatter.format(soTien);
-	    }
-	 
+	    } 
 	 @Override
 	    public String toString() {
 	        return "Tài khoản " + soTk + ": " + tenTk + " - Số dư: " + String.format("%,.2f", soTien) + " đồng";
 	    }
-	
-
 	 public boolean napTien(double soTienNap, int i) {
 		    if (soTienNap <= 0) {
 		        System.out.println("So tien nap phai lon hon 0");
@@ -104,8 +87,6 @@ public class Account {
 		    }
 		    return false;
 		}
-
-
 	 public boolean rutTien(double soTienRut) {
 		    if (soTienRut <= 0) {
 		        System.out.println("So tien rut phai lon hon 0");
@@ -118,7 +99,6 @@ public class Account {
 		    }
 		    return false;
 		}
-
 	public void transfer(Account account, double amount) {
 	    if (this.soTien >= amount && amount >= 50) {
 	        this.soTien -= amount;
@@ -128,11 +108,9 @@ public class Account {
 	        this.trangThai = "Chuyển khoản thất bại";
 	    }
 	}
-
 	public void daoHan() {
 	    double tienLai = this.soTien * laiSuat;
 	    this.soTien += tienLai;
 	    this.trangThai = "Đáo hạn thành công, lãi suất là " + String.format("%.2f", tienLai);
 	}
-
 }
