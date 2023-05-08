@@ -1,7 +1,5 @@
 package bai1;
-
 import java.util.Scanner;
-
 public class AccountList {
 	 private Account[] accList;
 	    private int count;
@@ -20,7 +18,7 @@ public class AccountList {
 	    public AccountList(Account[] accList) {
 	        this.accList = accList;
 	        this.count = accList.length;
-	    }  
+	    }    
 	    public boolean themTk(Account tk) {
 	        if (count == accList.length) {
 	            return false; 
@@ -35,7 +33,7 @@ public class AccountList {
 	    		}
 	    	}
 	        return null;
-	    }    
+	    }
 	    public void xoaTk(int stk) {
 	        Account[] tempAccList = new Account[accList.length];
 	        int tempCount = 0;
@@ -50,7 +48,7 @@ public class AccountList {
 	    }
 	    public int demSoTk() {
 	        return count;
-	    }   
+	    }    
 	    public void inDanhSachTk() {
 	        if (count == 0) {
 	            System.out.println("Danh sach rong!");
@@ -79,7 +77,7 @@ public class AccountList {
 	            }
 	        }
 	        return false;
-	    }	    	 
+	    }    
 	    public Account timTk1(int stk) {
 	        for (int i = 0; i < demSoTk(); i++) {
 	            if (accList[i].getSoTk() == stk) {
@@ -107,5 +105,13 @@ public class AccountList {
 	        } else {
 	            return false;
 	        }
-	    }    
+	    }
+	    public void tinhLai() {
+	        for (int i = 0; i < this.count; i++) {
+	            Account tk = this.accList[i];
+	            double lai = tk.tinhLai();
+	            tk.napTien(lai, i);
+	        }
+	        System.out.println("Đã tính lãi cho tất cả các tài khoản");
+	    }
 }
