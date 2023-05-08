@@ -23,10 +23,10 @@ public class AccountTest {
 	            switch (choice) {
 	            case 1:
 	                System.out.println("Nhập tên tài khoản: ");
+	                scanner.nextLine();
 	                String tenTk = scanner.nextLine();
-	                scanner.nextLine(); 
 	                System.out.println("Nhập số tài khoản: ");
-	                int soTk = scanner.nextInt();              
+	                int soTk = scanner.nextInt();
 	                System.out.println("Nhập số tiền: ");
 	                double soTien = scanner.nextDouble();
 	                scanner.nextLine();
